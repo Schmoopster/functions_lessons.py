@@ -16,7 +16,19 @@
 # "The sum of your dice is {sum_dice}. It looks like a winning roll"
 
 # Hint: use the random library's choice or randint method to choose a random value between 1 and 6.
-
+def throw_dice():
+    import random
+    die1 = random.randint(1, 6)
+    die2 = random.randint(1, 6)
+    return die1, die2
+def roll_result(die1, die2):
+    sum_dice = die1 + die2
+    if sum_dice <= 6:
+        return f"The sum of your dice is {sum_dice}. Unfortunate"
+    elif 6 < sum_dice < 10:
+        return f"The sum of your dice is {sum_dice}. You have a good chance"
+    else:
+        return f"The sum of your dice is {sum_dice}. It looks like a winning roll"
 
 
 # Interactions Between Functions Practice #2
@@ -40,6 +52,19 @@
 
 # Hint: Use the random library's choice method to choose an element at random from a sequence.
 
+def toss_coin():
+    import random
+    return random.choice(["Heads", "Tails"])
+def luck(coin_result, secret_codes):
+    if coin_result == "Tails":
+        print("List will self-destruct")
+        return []
+    else:
+        print("List was saved")
+        return secret_codes
+secret_codes = ["alpha", "bravo", "charlie", "delta"]
+coin_result = toss_coin()
+final_list = luck(coin_result, secret_codes)
 
 
 
